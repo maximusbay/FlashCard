@@ -8,6 +8,7 @@ function CancelButton({ deckId }) {
     <button
       type="button"
       onClick={() => history.push(`/decks/${deckId}`)}
+      className="btn btn-secondary"
     >
       Cancel
     </button>

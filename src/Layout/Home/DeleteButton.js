@@ -11,9 +11,9 @@ function DeleteButton({deck}) {
       };
 
     return (
-        <div>
-            <button type="button" onClick={handleDeleteClick}>Delete</button>
-        </div>
+            <button type="button" onClick={handleDeleteClick} className="btn btn-danger">
+              <span className="oi oi-trash" />
+            </button>
     )
 }
 

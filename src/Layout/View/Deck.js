@@ -5,7 +5,7 @@ import { deleteCard } from "../../utils/api/index";
 function Deck({ cards, deckId, url }) {
   const history = useHistory();
 
-  const handleDeleteCardClick = (card) => {
+  const handleDeleteClick = (card) => {
     if (
       window.confirm("Delete this card? You will not be able to recover it.")
     ) {
@@ -15,33 +15,36 @@ function Deck({ cards, deckId, url }) {
 
   const cardDisplay = cards.map((card, index) => {
     return (
-      <div key={index}>
-        <div>
-          <div>
-            <p>Front:</p>
+      <div className="card deck-card mt-3 p-3 mb-3" key={index}>
+        <div className="card-body row">
+          <div className="col-md-5 pl-3">
+            <p className="font-weight-bold">Front:</p>
             <p>{card.front}</p>
           </div>
-          <div>
-            <p>Back:</p>
+          <div className="col-md-5 ml-auto">
+            <p className="font-weight-bold">Back:</p>
             <p>{card.back}</p>
           </div>
         </div>
 
         <hr />
         
-        <div>
+        <div className="ml-auto mt-2">
           <button
             type="button"
             onClick={() =>
               history.push(`/decks/${deckId}/cards/${card.id}/edit`)
             }
+            className="btn btn-secondary"
           >
+            <span className="oi oi-pencil mr-1" />
             Edit
           </button>
 
           <button
             type="button"
-            onClick={() => handleDeleteCardClick(card)}
+            onClick={() => handleDeleteClick(card)}
+            className="btn btn-danger mx-2"
           >
             <a href={url} className="text-white">
               <span className="oi oi-trash" />

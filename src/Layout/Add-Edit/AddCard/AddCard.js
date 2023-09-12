@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { readDeck, createCard } from "../../utils/api/index";
-import Card from "./Card"
+import { readDeck, createCard } from "../../../utils/api/index";
+import Card from "../Card"
 import DoneButton from "./DoneButton"
 import AddCardNav from "./AddCardNav"
 
@@ -11,8 +11,8 @@ function AddCard() {
     const [cardBack, setCardBack] = useState("");
     const deckId = useParams().deckId;
 
-    const handleCardFrontChange = (event) => setCardFront(event.target.value);
-    const handleCardBackChange = (event) => setCardBack(event.target.value);
+    const handleFrontChange = (event) => setCardFront(event.target.value);
+    const handleBackChange = (event) => setCardBack(event.target.value);
 
     const handleSaveCard = (event) => {
         event.preventDefault();
@@ -34,15 +34,15 @@ function AddCard() {
     return (
     <div>
     <AddCardNav deckName={deck.name} deckId={deckId} />
-    <h2>{deck.name}: Add Card</h2>
+    <h3>{deck.name}: Add Card</h3>
     <form onSubmit={handleSaveCard}>
     <Card cardFront={cardFront} 
-          handleCardFrontChange={handleCardFrontChange} 
+          handleCardFrontChange={handleFrontChange} 
           cardBack={cardBack} 
-          handleCardBackChange={handleCardBackChange}/>
+          handleCardBackChange={handleBackChange}/>
     <div>
         <DoneButton deckId={deckId}/>
-        <button type="submit">Save</button>
+        <button type="submit" className="btn btn-primary ml-2 mb-3">Save</button>
     </div>
     </form>
     </div>

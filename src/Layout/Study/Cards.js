@@ -7,7 +7,7 @@ function FlipButton({ setIsFrontOfCard }) {
   };
 
   return (
-    <button type="button" onClick={flipCardHandler}>
+    <button className="btn btn-secondary" type="button" onClick={flipCardHandler}>
       Flip
     </button>
   );
@@ -15,7 +15,7 @@ function FlipButton({ setIsFrontOfCard }) {
 
 function NextButton({ NextCardHandler }) {
   return (
-    <button type="button" onClick={NextCardHandler}>
+    <button className="btn btn-primary ml-2" type="button" onClick={NextCardHandler}>
       Next
     </button>
   );
@@ -27,8 +27,9 @@ function AddCardsButton({ deckId }) {
     <button
       type="button"
       onClick={() => history.push(`/decks/${deckId}/cards/new`)}
+      className="btn btn-primary"
     >
-      <span /> Add Cards
+      <span className="oi oi-plus" /> Add Cards
     </button>
   );
 }
@@ -76,7 +77,7 @@ function Cards({ cards, currentCard, setCurrentCard, deckId }) {
 
   if (isFrontOfCard) {
     return (
-      <div>
+      <div className="card p-3 mb-3">
         <div>
           <h5>
             Card {cardCount} of {cards.length}
@@ -90,7 +91,7 @@ function Cards({ cards, currentCard, setCurrentCard, deckId }) {
   }
 
   return (
-    <div>
+    <div className="card p-3 mb-3">
       <div>
         <h5>
           Card {cardCount} of {cards.length}

@@ -35,22 +35,22 @@ function EditDeck() {
     return (
     <div>
     <h2>Edit Deck</h2>
-    <form onSubmit={handleEditSubmit}>
-    <div>
-    <label>
+    <form onSubmit={handleEditSubmit} className="mb-3">
+    <div className="form-group">
+    <label style={{display: "block"}}>
       Name
-      <input type="text" value={deckName} onChange={handleNameChange}></input>
-    </label>
+      <input className="form-control" style={{display: "block"}} type="text" value={deckName} onChange={handleNameChange}></input>
+    </label >
     </div>
-    <div>
-    <label>
+    <div className="form-group">
+    <label style={{display: "block"}}>
       Description
-      <textarea row="5" value={deckDescription} onChange={handleDescriptionChange}></textarea>
+      <textarea className="form-control" style={{display: "block"}} rows="5" value={deckDescription} onChange={handleDescriptionChange}></textarea>
     </label>
     </div>
     <div>
       <CancelButton deckId={deckId}/>
-      <button type="submit">Submit</button>
+      <button type="submit" className="btn btn-primary ml-3">Submit</button>
     </div>
     </form>
     </div>

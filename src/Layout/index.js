@@ -7,8 +7,8 @@ import New from "./New/New";
 import Study from "./Study/Study";
 import View from "./View/View";
 import EditDeck from "./Edit/EditDeck";
-import AddCard from "./AddCard/AddCard";
-import EditCard from "./EditCard/EditCard";
+import AddCard from "./Add-Edit/AddCard/AddCard";
+import EditCard from "./Add-Edit/EditCard/EditCard";
 
 function Layout() {
   return (

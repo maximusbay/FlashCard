@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 function DoneButton({ deckId }) {
     const history = useHistory();
     return(
-        <button type="button" onClick={() => history.push(`/decks/${deckId}`)}>
+        <button className="btn btn-secondary mb-3" type="button" onClick={() => history.push(`/decks/${deckId}`)}>
             Done
         </button>
     )

@@ -11,10 +11,10 @@ function DeleteButton({ deckId }) {
         deleteDeck(deckId).then(() => history.push("/"));
       }
     };
-  
+
     return (
-      <button type="button" onClick={handleTrashClick}>
-        Delete
+      <button type="button" onClick={handleTrashClick} className="btn btn-danger">
+        <span className="oi oi-trash" />
       </button>
     );
   }

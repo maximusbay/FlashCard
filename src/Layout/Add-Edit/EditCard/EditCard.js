@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { readDeck, readCard, updateCard } from "../../utils/api/index";
+import { readDeck, readCard, updateCard } from "../../../utils/api/index";
 import EditCardNav from "./EditCardNav";
-import Card from "./Card";
+import Card from "../Card";
 import CancelButton from "./CancelButton"
 
 function EditCard() {
@@ -14,8 +14,8 @@ function EditCard() {
   const cardId = useParams().cardId;
   const history = useHistory();
 
-  const handleCardFrontChange = (event) => setCardFront(event.target.value);
-  const handleCardBackChange = (event) => setCardBack(event.target.value);
+  const handleFrontChange = (event) => setCardFront(event.target.value);
+  const handleBackChange = (event) => setCardBack(event.target.value);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,14 +45,14 @@ function EditCard() {
         <div>
         <h1>EDITCARD</h1>
         <EditCardNav deckName={deck.name} deckId={deckId} cardId={cardId}/>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="mb-3">
         <Card cardFront={cardFront} 
-          handleCardFrontChange={handleCardFrontChange} 
+          handleCardFrontChange={handleFrontChange} 
           cardBack={cardBack} 
-          handleCardBackChange={handleCardBackChange}/>
+          handleCardBackChange={handleBackChange}/>
         <CancelButton deckId={deckId}/>
-        <button type="submit">Submit</button>
-        </form>
+        <button type="submit" className="btn btn-primary">Submit</button>
+        </form >
         </div>
     )
 }
