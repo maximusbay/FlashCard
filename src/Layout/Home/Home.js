@@ -45,7 +45,7 @@ function Home() {
                   </button>
                 </div>
                 <div>
-                  <DeleteButton />
+                  <DeleteButton deck={deck}/>
                 </div>
               </div>
        

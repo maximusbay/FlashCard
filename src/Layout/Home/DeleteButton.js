@@ -7,6 +7,7 @@ function DeleteButton({deck}) {
           window.confirm("Delete this deck? You will not be able to recover it.")
         ) {
           deleteDeck(deck.id);
+          window.location.reload();
         }
       };
 
